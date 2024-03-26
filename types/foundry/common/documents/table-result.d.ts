@@ -27,7 +27,7 @@ export default interface BaseTableResult<TParent extends documents.BaseRollTable
     get documentName(): TableResultMetadata["name"];
 }
 
-interface TableResultMetadata extends DocumentMetadata {
+export interface TableResultMetadata extends DocumentMetadata {
     name: "TableResult";
     collection: "results";
     label: "DOCUMENT.TableResult";
@@ -35,7 +35,7 @@ interface TableResultMetadata extends DocumentMetadata {
     coreTypes: TableResultType[];
 }
 
-type TableResultSchema = {
+export type TableResultSchema = {
     /** The _id which uniquely identifies this TableResult embedded document */
     _id: fields.DocumentIdField;
     /** A result subtype from CONST.TABLE_RESULT_TYPES */
@@ -61,4 +61,4 @@ type TableResultSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type TableResultSource = SourceFromSchema<TableResultSchema>;
+export type TableResultSource = SourceFromSchema<TableResultSchema>;

@@ -37,7 +37,7 @@ interface TokenMetadata extends abstract.DocumentMetadata {
     };
 }
 
-type TokenSchema = {
+export type TokenSchema = {
     /** The Token _id which uniquely identifies it within its parent Scene */
     _id: fields.DocumentIdField;
     /** The name used to describe the Token */

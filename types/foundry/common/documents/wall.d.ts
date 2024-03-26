@@ -26,14 +26,14 @@ export default interface BaseWall<TParent extends BaseScene | null>
     get documentName(): WallMetadata["name"];
 }
 
-interface WallMetadata extends DocumentMetadata {
+export interface WallMetadata extends DocumentMetadata {
     name: "Wall";
     collection: "walls";
     label: "DOCUMENT.Wall";
     labelPlural: "DOCUMENT.Walls";
 }
 
-type WallSchema = {
+export type WallSchema = {
     /** The _id which uniquely identifies the embedded Wall document */
     _id: fields.DocumentIdField;
     /** The wall coordinates, a length-4 array of finite numbers [x0,y0,x1,y1] */
@@ -63,7 +63,7 @@ type WallSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type WallThresholdSchema = {
+export type WallThresholdSchema = {
     /** Minimum distance from a light source for which this wall blocks light */
     light: fields.NumberField<number, number, true, true, true>;
     /** Minimum distance from a vision source for which this wall blocks vision */
@@ -74,4 +74,4 @@ type WallThresholdSchema = {
     attenuation: fields.BooleanField;
 };
 
-type WallSource = SourceFromSchema<WallSchema>;
+export type WallSource = SourceFromSchema<WallSchema>;

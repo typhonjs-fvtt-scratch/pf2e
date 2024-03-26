@@ -15,7 +15,7 @@ export default interface BaseCombatant<TParent extends BaseCombat | null>
     get documentName(): CombatantMetadata["name"];
 }
 
-interface CombatantMetadata extends DocumentMetadata {
+export interface CombatantMetadata extends DocumentMetadata {
     name: "Combatant";
     collection: "combatants";
     label: "DOCUMENT.Combatant";
@@ -23,7 +23,7 @@ interface CombatantMetadata extends DocumentMetadata {
 }
 
 /** The data schema for a Combat document. */
-type CombatantSchema = {
+export type CombatantSchema = {
     /** The _id which uniquely identifies this Combatant embedded document */
     _id: fields.DocumentIdField;
     /** The _id of an Actor associated with this Combatant */
@@ -46,4 +46,4 @@ type CombatantSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type CombatantSource = SourceFromSchema<CombatantSchema>;
+export type CombatantSource = SourceFromSchema<CombatantSchema>;

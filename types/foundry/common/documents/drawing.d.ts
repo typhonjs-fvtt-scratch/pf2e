@@ -42,7 +42,7 @@ export default interface BaseDrawing<TParent extends documents.BaseScene | null>
     get documentName(): DrawingMetadata["name"];
 }
 
-interface DrawingMetadata extends abstract.DocumentMetadata {
+export interface DrawingMetadata extends abstract.DocumentMetadata {
     name: "Drawing";
     collection: "drawings";
     label: "DOCUMENT.Drawing";
@@ -55,7 +55,7 @@ interface DrawingMetadata extends abstract.DocumentMetadata {
     };
 }
 
-type DrawingSchema = {
+export type DrawingSchema = {
     /** The _id which uniquely identifies this BaseDrawing embedded document */
     _id: fields.DocumentIdField;
     /** The _id of the user who created the drawing */
@@ -104,4 +104,4 @@ type DrawingSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type DrawingSource = SourceFromSchema<DrawingSchema>;
+export type DrawingSource = SourceFromSchema<DrawingSchema>;

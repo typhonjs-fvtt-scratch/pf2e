@@ -27,14 +27,14 @@ export default interface BaseTile<TParent extends BaseScene | null>
     get documentName(): TileMetadata["name"];
 }
 
-interface TileMetadata extends DocumentMetadata {
+export interface TileMetadata extends DocumentMetadata {
     name: "Tile";
     collection: "tiles";
     label: "DOCUMENT.Tile";
     labelPlural: "DOCUMENT.Tiles";
 }
 
-type TileSchema = {
+export type TileSchema = {
     /** The _id which uniquely identifies this Tile embedded document */
     _id: fields.DocumentIdField;
     /** An image or video texture which this tile displays. */
@@ -68,7 +68,7 @@ type TileSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type TileOcclusionSchema = {
+export type TileOcclusionSchema = {
     /** The occlusion mode from CONST.TILE_OCCLUSION_MODES */
     mode: fields.NumberField<TileOcclusionMode, TileOcclusionMode, false, true, true>;
     /** The occlusion alpha between 0 and 1 */
@@ -77,7 +77,7 @@ type TileOcclusionSchema = {
     radius: fields.NumberField;
 };
 
-type TileVideoSchema = {
+export type TileVideoSchema = {
     /** Automatically loop the video? */
     loop: fields.BooleanField;
     /** Should the video play automatically? */
@@ -86,4 +86,4 @@ type TileVideoSchema = {
     volume: fields.AlphaField;
 };
 
-type TileSource = SourceFromSchema<TileSchema>;
+export type TileSource = SourceFromSchema<TileSchema>;

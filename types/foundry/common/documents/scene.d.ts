@@ -47,7 +47,7 @@ export interface SceneMetadata extends DocumentMetadata {
     preserveOnImport: string[];
 }
 
-type SceneSchema = {
+export type SceneSchema = {
     /** The _id which uniquely identifies this Scene document */
     _id: fields.DocumentIdField;
     /** The name of this scene */
@@ -174,7 +174,7 @@ type SceneSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type GridDataSchema = {
+export type GridDataSchema = {
     /** The type of grid, a number from CONST.GRID_TYPES. */
     type: fields.NumberField<GridType, GridType, true, false, false>;
     /** The grid size which represents the width (or height) of a single grid space. */
@@ -189,7 +189,7 @@ type GridDataSchema = {
     units: fields.StringField<string, string, true, false, true>;
 };
 
-type SceneSource = SourceFromSchema<SceneSchema>;
+export type SceneSource = SourceFromSchema<SceneSchema>;
 
 declare global {
     export interface SceneEmbeddedModificationContext<TParent extends BaseScene>

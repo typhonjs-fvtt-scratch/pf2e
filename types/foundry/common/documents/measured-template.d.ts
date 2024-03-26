@@ -38,14 +38,14 @@ export default interface BaseMeasuredTemplate<TParent extends documents.BaseScen
     get documentName(): MeasuredTemplateMetadata["name"];
 }
 
-interface MeasuredTemplateMetadata extends DocumentMetadata {
+export interface MeasuredTemplateMetadata extends DocumentMetadata {
     name: "MeasuredTemplate";
     collection: "templates";
     label: "DOCUMENT.MeasuredTemplate";
     isEmbedded: true;
 }
 
-type MeasuredTemplateSchema = {
+export type MeasuredTemplateSchema = {
     /** The _id which uniquely identifies this BaseMeasuredTemplate embedded document */
     _id: fields.DocumentIdField;
     /** The _id of the user who created this measured template */

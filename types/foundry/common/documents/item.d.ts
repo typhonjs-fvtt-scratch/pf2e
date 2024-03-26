@@ -52,7 +52,7 @@ export default interface BaseItem<TParent extends documents.BaseActor | null>
     readonly effects: abstract.EmbeddedCollection<documents.BaseActiveEffect<this>>;
 }
 
-interface ItemMetadata extends abstract.DocumentMetadata {
+export interface ItemMetadata extends abstract.DocumentMetadata {
     name: "Item";
     collection: "items";
     indexed: true;
@@ -94,7 +94,7 @@ export type ItemSource<TType extends string = string, TSystemSource extends obje
     ItemSchema<TType, TSystemSource>
 >;
 
-interface ItemFlags extends DocumentFlags {
+export interface ItemFlags extends DocumentFlags {
     core?: {
         sourceId?: ItemUUID;
     };

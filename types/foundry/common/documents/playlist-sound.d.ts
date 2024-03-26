@@ -24,9 +24,9 @@ export default interface BasePlaylistSound<TParent extends documents.BasePlaylis
     getDocumentName: PlaylistSoundMetadata["name"];
 }
 
-type PlaylistSoundSource = SourceFromSchema<PlaylistSoundSchema>;
+export type PlaylistSoundSource = SourceFromSchema<PlaylistSoundSchema>;
 
-interface PlaylistSoundMetadata extends DocumentMetadata {
+export interface PlaylistSoundMetadata extends DocumentMetadata {
     name: "PlaylistSound";
     collection: "sounds";
     indexed: true;
@@ -34,7 +34,7 @@ interface PlaylistSoundMetadata extends DocumentMetadata {
     labelPlural: "DOCUMENT.PlaylistSounds";
 }
 
-type PlaylistSoundSchema = {
+export type PlaylistSoundSchema = {
     /** The _id which uniquely identifies this PlaylistSound document */
     _id: fields.DocumentIdField;
     /** The name of this sound */

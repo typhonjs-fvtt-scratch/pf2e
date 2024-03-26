@@ -23,7 +23,7 @@ export default interface BaseSetting extends Document<null, SettingSchema>, Mode
     get documentName(): SettingMetadata["name"];
 }
 
-interface SettingMetadata extends DocumentMetadata {
+export interface SettingMetadata extends DocumentMetadata {
     name: "Setting";
     collection: "settings";
     label: "DOCUMENT.Setting";
@@ -35,11 +35,11 @@ interface SettingMetadata extends DocumentMetadata {
     };
 }
 
-type SettingSchema = {
+export type SettingSchema = {
     _id: fields.DocumentIdField;
     key: fields.StringField<string, string, true, false, false>;
     value: fields.JSONField<NonNullable<JSONValue>, true, true, false>;
     _stats: fields.DocumentStatsField;
 };
 
-type SettingSource = SourceFromSchema<SettingSchema>;
+export type SettingSource = SourceFromSchema<SettingSchema>;

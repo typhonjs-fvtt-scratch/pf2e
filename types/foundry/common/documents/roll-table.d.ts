@@ -26,7 +26,7 @@ export default interface BaseRollTable extends Document<null, RollTableSchema>, 
     get documentName(): (typeof BaseRollTable)["metadata"]["name"];
 }
 
-interface RollTableMetadata extends DocumentMetadata {
+export interface RollTableMetadata extends DocumentMetadata {
     name: "RollTable";
     collection: "tables";
     indexed: true;
@@ -36,7 +36,7 @@ interface RollTableMetadata extends DocumentMetadata {
     labelPlural: "DOCUMENT.RollTables";
 }
 
-type RollTableSchema = {
+export type RollTableSchema = {
     /** The _id which uniquely identifies this RollTable document */
     _id: fields.DocumentIdField;
     /** The name of this RollTable */
@@ -66,4 +66,4 @@ type RollTableSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type RollTableSource = SourceFromSchema<RollTableSchema>;
+export type RollTableSource = SourceFromSchema<RollTableSchema>;

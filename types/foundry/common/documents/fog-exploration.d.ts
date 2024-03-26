@@ -28,7 +28,7 @@ export default interface BaseFogExploration
     get documentName(): FogExplorationMetadata["name"];
 }
 
-interface FogExplorationMetadata extends DocumentMetadata {
+export interface FogExplorationMetadata extends DocumentMetadata {
     name: "FogExploration";
     collection: "fog";
     label: "DOCUMENT.FogExploration";
@@ -36,7 +36,7 @@ interface FogExplorationMetadata extends DocumentMetadata {
     isPrimary: true;
 }
 
-type FogExplorationSchema = {
+export type FogExplorationSchema = {
     /** The _id which uniquely identifies this FogExploration document */
     _id: fields.DocumentIdField;
     /** The _id of the Scene document to which this fog applies */
@@ -52,4 +52,4 @@ type FogExplorationSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type FogExplorationSource = SourceFromSchema<FogExplorationSchema>;
+export type FogExplorationSource = SourceFromSchema<FogExplorationSchema>;

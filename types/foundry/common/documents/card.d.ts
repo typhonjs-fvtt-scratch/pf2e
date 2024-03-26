@@ -43,7 +43,7 @@ export default interface BaseCard<TParent extends documents.BaseCards | null>
     get documentName(): CardMetadata["name"];
 }
 
-interface CardMetadata extends DocumentMetadata {
+export interface CardMetadata extends DocumentMetadata {
     name: "Card";
     collection: "cards";
     indexed: true;
@@ -51,7 +51,7 @@ interface CardMetadata extends DocumentMetadata {
     labelPlural: "DOCUMENT.Cards";
 }
 
-type CardSchema = {
+export type CardSchema = {
     /** The _id which uniquely identifies this Card document */
     _id: fields.DocumentIdField;
     /** The text name of this card */
@@ -88,7 +88,7 @@ type CardSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type CardFaceSchema = {
+export type CardFaceSchema = {
     /** A name for this card face */
     name: fields.StringField<string, string, false, false, true>;
     /** Displayed text that belongs to this face */

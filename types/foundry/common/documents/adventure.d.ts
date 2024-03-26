@@ -54,14 +54,14 @@ export default interface BaseAdventure extends Document<null, AdventureSchema>, 
     get documentName(): AdventureMetadata["name"];
 }
 
-interface AdventureMetadata extends DocumentMetadata {
+export interface AdventureMetadata extends DocumentMetadata {
     name: "Adventure";
     collection: "Adventures";
     label: "DOCUMENT.Adventure";
     isPrimary: true;
 }
 
-type AdventureSchema = {
+export type AdventureSchema = {
     /** The _id which uniquely identifies this Adventure document */
     _id: fields.DocumentIdField;
     /** The human-readable name of the Adventure */
@@ -101,4 +101,4 @@ type AdventureSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type AdventureSource = SourceFromSchema<AdventureSchema>;
+export type AdventureSource = SourceFromSchema<AdventureSchema>;

@@ -43,7 +43,7 @@ export default interface BaseMacro extends Document<null, MacroSchema>, ModelPro
     get documentName(): MacroMetadata["name"];
 }
 
-interface MacroMetadata extends DocumentMetadata {
+export interface MacroMetadata extends DocumentMetadata {
     name: "Macro";
     collection: "macros";
     indexed: true;
@@ -58,7 +58,7 @@ interface MacroMetadata extends DocumentMetadata {
     };
 }
 
-type MacroSchema = {
+export type MacroSchema = {
     /** The _id which uniquely identifies this Macro document */
     _id: fields.DocumentIdField;
     /** The name of this Macro */
@@ -85,4 +85,4 @@ type MacroSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type MacroSource = SourceFromSchema<MacroSchema>;
+export type MacroSource = SourceFromSchema<MacroSchema>;

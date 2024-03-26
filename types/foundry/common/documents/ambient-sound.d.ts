@@ -22,7 +22,7 @@ export default interface BaseAmbientSound<TParent extends BaseScene | null>
     get documentName(): AmbientSoundMetadata["name"];
 }
 
-interface AmbientSoundMetadata extends DocumentMetadata {
+export interface AmbientSoundMetadata extends DocumentMetadata {
     name: "AmbientSound";
     collection: "sounds";
     label: "DOCUMENT.AmbientSound";
@@ -36,7 +36,7 @@ interface AmbientSoundMetadata extends DocumentMetadata {
  * @property {{min: number, max: number}} darkness  A darkness range (min and max) for which the source should be active
  * @property {object} [flags]             An object of optional key/value flags
  */
-type AmbientSoundSchema = {
+export type AmbientSoundSchema = {
     /** The _id which uniquely identifies this AmbientSound document */
     _id: fields.DocumentIdField;
     /** The x-coordinate position of the origin of the sound. */
@@ -83,4 +83,4 @@ type AmbientSoundSchema = {
  * @property [volume=0.5]    The audio volume of the sound, from 0 to 1
  * @property [flags={}]      An object of optional key/value flags
  */
-type AmbientSoundSource = SourceFromSchema<AmbientSoundSchema>;
+export type AmbientSoundSource = SourceFromSchema<AmbientSoundSchema>;

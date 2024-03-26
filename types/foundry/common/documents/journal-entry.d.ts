@@ -17,7 +17,7 @@ export default interface BaseJournalEntry
     get documentName(): (typeof BaseJournalEntry)["metadata"]["name"];
 }
 
-interface JournalEntryMetadata extends DocumentMetadata {
+export interface JournalEntryMetadata extends DocumentMetadata {
     name: "JournalEntry";
     collection: "journal";
     indexed: true;
@@ -33,7 +33,7 @@ interface JournalEntryMetadata extends DocumentMetadata {
     };
 }
 
-type JournalEntrySchema = {
+export type JournalEntrySchema = {
     /** The _id which uniquely identifies this JournalEntry document */
     _id: fields.DocumentIdField;
     /** The name of this JournalEntry */
@@ -52,4 +52,4 @@ type JournalEntrySchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type JournalEntrySource = SourceFromSchema<JournalEntrySchema>;
+export type JournalEntrySource = SourceFromSchema<JournalEntrySchema>;

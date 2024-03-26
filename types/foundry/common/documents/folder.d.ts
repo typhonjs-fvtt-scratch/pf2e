@@ -22,7 +22,7 @@ export default interface BaseFolder extends Document<null, FolderSchema>, ModelP
     get documentName(): FolderMetadata["name"];
 }
 
-interface FolderMetadata extends DocumentMetadata {
+export interface FolderMetadata extends DocumentMetadata {
     name: "Folder";
     collection: "folders";
     label: "DOCUMENT.Folder";
@@ -30,9 +30,9 @@ interface FolderMetadata extends DocumentMetadata {
     coreTypes: typeof CONST.FOLDER_DOCUMENT_TYPES;
 }
 
-type FolderSortingMode = (typeof BaseFolder.SORTING_MODES)[number];
+export type FolderSortingMode = (typeof BaseFolder.SORTING_MODES)[number];
 
-type FolderSchema = {
+export type FolderSchema = {
     /** The _id which uniquely identifies this Folder document */
     _id: fields.DocumentIdField;
     /** The name of this Folder */
@@ -53,4 +53,4 @@ type FolderSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type FolderSource = SourceFromSchema<FolderSchema>;
+export type FolderSource = SourceFromSchema<FolderSchema>;

@@ -361,7 +361,7 @@ export interface CleanFieldOptions {
 /*  Basic Field Types                           */
 /* -------------------------------------------- */
 
-type BooleanFieldOptions<
+export type BooleanFieldOptions<
     TSourceProp extends boolean,
     TRequired extends boolean = true,
     TNullable extends boolean = false,
@@ -383,7 +383,7 @@ export class BooleanField<
     protected override _validateType(value: unknown): value is boolean;
 }
 
-interface NumberFieldOptions<
+export interface NumberFieldOptions<
     TSourceProp extends number,
     TRequired extends boolean,
     TNullable extends boolean,
@@ -427,7 +427,7 @@ export class NumberField<
     protected override _validateType(value: unknown): void;
 }
 
-interface StringFieldOptions<
+export interface StringFieldOptions<
     TSourceProp extends string,
     TRequired extends boolean,
     TNullable extends boolean,
@@ -471,7 +471,7 @@ export class StringField<
     protected _validateType(value: unknown): boolean | void;
 }
 
-type ObjectFieldOptions<
+export type ObjectFieldOptions<
     TSourceProp extends object,
     TRequired extends boolean,
     TNullable extends boolean,
@@ -507,7 +507,7 @@ export class ObjectField<
     ): DataModelValidationFailure | boolean | void;
 }
 
-type ArrayFieldOptions<
+export type ArrayFieldOptions<
     TSourceProp extends unknown[],
     TRequired extends boolean,
     TNullable extends boolean,
@@ -843,7 +843,7 @@ export class ColorField<
  * @property [categories]   A set of categories in CONST.FILE_CATEGORIES which this field supports
  * @property [base64=false] Is embedded base64 data supported in lieu of a file path?
  */
-interface FilePathFieldOptions<
+export interface FilePathFieldOptions<
     TSourceProp extends FilePath,
     TRequired extends boolean,
     TNullable extends boolean,
@@ -869,7 +869,7 @@ export class FilePathField<
     protected override _validateType(value: unknown): void;
 }
 
-interface AngleFieldOptions<
+export interface AngleFieldOptions<
     TSourceProp extends number,
     TRequired extends boolean,
     TNullable extends boolean,
@@ -979,7 +979,7 @@ export class DocumentStatsField extends SchemaField<DocumentStatsSchema> {
     constructor(options?: ObjectFieldOptions<DocumentStatsSchema, true, false, true>);
 }
 
-type DocumentStatsSchema = {
+export type DocumentStatsSchema = {
     systemId: StringField<string, string, true, false, true>;
     systemVersion: StringField<string, string, true, false, true>;
     coreVersion: StringField<string, string, true, false, true>;

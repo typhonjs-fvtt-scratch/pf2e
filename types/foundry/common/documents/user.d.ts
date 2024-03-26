@@ -60,14 +60,14 @@ export default interface BaseUser<TCharacter extends BaseActor<null> = BaseActor
     get documentName(): UserMetadata["name"];
 }
 
-interface UserMetadata extends DocumentMetadata {
+export interface UserMetadata extends DocumentMetadata {
     name: "User";
     collection: "users";
     label: "DOCUMENT.User";
     labelPlural: "DOCUMENT.Users";
 }
 
-type UserSchema<TActor extends BaseActor<null>> = {
+export type UserSchema<TActor extends BaseActor<null>> = {
     _id: fields.DocumentIdField;
     name: fields.StringField<string, string, true, false, false>;
     role: fields.NumberField<UserRole, UserRole, true, false, true>;
@@ -83,4 +83,4 @@ type UserSchema<TActor extends BaseActor<null>> = {
     _stats: fields.DocumentStatsField;
 };
 
-type UserSource = SourceFromSchema<UserSchema<BaseActor<null>>>;
+export type UserSource = SourceFromSchema<UserSchema<BaseActor<null>>>;

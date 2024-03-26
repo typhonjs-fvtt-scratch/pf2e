@@ -15,7 +15,7 @@ export default interface BasePlaylist extends Document<null, PlaylistSchema>, Mo
     readonly sounds: EmbeddedCollection<documents.BasePlaylistSound<this>>;
 }
 
-interface PlaylistMetadata extends DocumentMetadata {
+export interface PlaylistMetadata extends DocumentMetadata {
     name: "Playlist";
     collection: "playlists";
     indexed: true;
@@ -25,7 +25,7 @@ interface PlaylistMetadata extends DocumentMetadata {
     labelPlural: "DOCUMENT.Playlists";
 }
 
-type PlaylistSchema = {
+export type PlaylistSchema = {
     _id: fields.DocumentIdField;
     name: fields.StringField<string, string, true, false, false>;
     description: fields.StringField;

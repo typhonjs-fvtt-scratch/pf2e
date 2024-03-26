@@ -40,7 +40,7 @@ export default interface BaseNote<TParent extends documents.BaseScene | null>
     get documentName(): NoteMetadata["name"];
 }
 
-interface NoteMetadata extends DocumentMetadata {
+export interface NoteMetadata extends DocumentMetadata {
     name: "Note";
     collection: "notes";
     label: "DOCUMENT.Note";
@@ -52,7 +52,7 @@ interface NoteMetadata extends DocumentMetadata {
     };
 }
 
-type NoteSchema = {
+export type NoteSchema = {
     /** The _id which uniquely identifies this BaseNote embedded document */
     _id: fields.DocumentIdField;
     /** The _id of a JournalEntry document which this Note represents */
@@ -83,4 +83,4 @@ type NoteSchema = {
     flags: fields.ObjectField<DocumentFlags>;
 };
 
-type NoteSource = SourceFromSchema<NoteSchema>;
+export type NoteSource = SourceFromSchema<NoteSchema>;

@@ -35,7 +35,7 @@ export default interface BaseCards extends abstract.Document<null, CardsSchema>,
     get documentName(): CardsMetadata["name"];
 }
 
-interface CardsMetadata extends abstract.DocumentMetadata {
+export interface CardsMetadata extends abstract.DocumentMetadata {
     name: "Cards";
     collection: "cards";
     indexed: true;
@@ -51,7 +51,7 @@ interface CardsMetadata extends abstract.DocumentMetadata {
     coreTypes: ["deck", "hand", "pile"];
 }
 
-type CardsSchema = {
+export type CardsSchema = {
     /** The _id which uniquely identifies this stack of Cards document */
     _id: fields.DocumentIdField;
     /** The text name of this stack */
@@ -86,6 +86,6 @@ type CardsSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type CardsType = CardsMetadata["coreTypes"][number];
+export type CardsType = CardsMetadata["coreTypes"][number];
 
-type CardsSource = SourceFromSchema<CardsSchema>;
+export type CardsSource = SourceFromSchema<CardsSchema>;

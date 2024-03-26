@@ -79,7 +79,7 @@ export interface ActorMetadata extends abstract.DocumentMetadata {
     labelPlural: "DOCUMENT.Actors";
 }
 
-type ActorSchema<
+export type ActorSchema<
     TType extends string = string,
     TSystemSource extends object = object,
     TItemSource extends documents.ItemSource = documents.ItemSource,

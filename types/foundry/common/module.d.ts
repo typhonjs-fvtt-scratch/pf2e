@@ -14,17 +14,17 @@ declare global {
     namespace globalThis {
         namespace foundry {
             /** Constant definitions used throughout the Foundry Virtual Tabletop framework. */
-            export import CONST = Constants;
+            export { Constants as CONST };
             /** Abstract class definitions for fundamental concepts used throughout the Foundry Virtual Tabletop framework. */
-            export import abstract = Abstract;
+            export { Abstract as abstract };
             /** Data schema definitions for data models. */
-            export import data = Data;
+            export { Data as data };
             /** Document definitions used throughout the Foundry Virtual Tabletop framework. */
-            export import documents = Documents;
+            export { Documents as documents };
             /** Package data definitions, validations, and schema. */
-            export import packages = Packages;
+            export { Packages as packages };
             /** Utility functions providing helpful functionality. */
-            export import utils = Utils;
+            export { Utils as utils };
         }
     }
 }

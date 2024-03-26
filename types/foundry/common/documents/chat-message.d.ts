@@ -62,7 +62,7 @@ export interface ChatMessageFlags extends DocumentFlags {
     };
 }
 
-type ChatSpeakerSchema = {
+export type ChatSpeakerSchema = {
     /** The _id of the Scene where this message was created */
     scene: fields.ForeignDocumentField<string>;
     /** The _id of the Actor who generated this message */
@@ -73,9 +73,9 @@ type ChatSpeakerSchema = {
     alias: fields.StringField<string, string, false, false, true>;
 };
 
-type ChatSpeakerData = SourceFromSchema<ChatSpeakerSchema>;
+export type ChatSpeakerData = SourceFromSchema<ChatSpeakerSchema>;
 
-interface ChatMessageMetadata extends DocumentMetadata {
+export interface ChatMessageMetadata extends DocumentMetadata {
     name: "ChatMessage";
     collection: "messages";
     label: "DOCUMENT.ChatMessage";

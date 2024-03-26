@@ -55,7 +55,7 @@ export interface ActiveEffectMetadata extends DocumentMetadata {
     isEmbedded: true;
 }
 
-type ActiveEffectSchema = {
+export type ActiveEffectSchema = {
     _id: fields.DocumentIdField;
     name: fields.StringField<string, string, true, false, false>;
     changes: fields.ArrayField<

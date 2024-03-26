@@ -6,7 +6,7 @@ export class PackageCompatibility extends fields.SchemaField<PackageCompatibilit
     constructor(options: fields.DataFieldOptions<SourceFromSchema<PackageCompatibilitySchema>, true, false, true>);
 }
 
-type PackageCompatibilitySchema = {
+export type PackageCompatibilitySchema = {
     /** The Package will not function before this version */
     minimum: fields.StringField<string, string, false, false, false>;
     /** Verified compatible up to this version */
@@ -20,7 +20,7 @@ export class PackageRelationships extends fields.SchemaField<PackageRelationship
     constructor(options?: fields.DataFieldOptions<SourceFromSchema<PackageRelationshipsSchema>, true, false, true>);
 }
 
-type PackageRelationshipsSchema = {
+export type PackageRelationshipsSchema = {
     /** Systems that this Package supports */
     systems: fields.SetField<RelatedPackage>;
     /** Packages that are required for base functionality */
@@ -39,7 +39,7 @@ export class RelatedPackage extends fields.SchemaField<RelatedPackageSchema> {
     constructor(options?: fields.DataFieldOptions<SourceFromSchema<RelatedPackageSchema>, true, false, true>);
 }
 
-type RelatedPackageSchema = {
+export type RelatedPackageSchema = {
     id: fields.StringField<string, string, true, false, false>;
     type: fields.StringField<PackageType>;
     manifest: fields.StringField<string, string, false, false, false>;
@@ -52,7 +52,7 @@ export class PackageCompendiumFolder extends fields.SchemaField<PackageCompendiu
     constructor(options?: fields.DataFieldOptions<PackageCompendiumFolderSchema, true, false, true>);
 }
 
-type PackageCompendiumFolderSchema = {
+export type PackageCompendiumFolderSchema = {
     name: fields.StringField<string, string, true, false, false>;
     sorting: fields.StringField<"a" | "m">;
     color: fields.ColorField;
@@ -201,7 +201,7 @@ export default interface BasePackage<TDataSchema extends BasePackageSchema>
  * The data structure of a package manifest. This data structure is extended by BasePackage subclasses to add additional
  * type-specific fields.
  */
-type BasePackageSchema = {
+export type BasePackageSchema = {
     /** The machine-readable unique package id, should be lower-case with no spaces or special characters */
     id: fields.StringField<string, string, true, false, false>;
     /** The human-readable package title, containing spaces and special characters */
@@ -261,7 +261,7 @@ type BasePackageSchema = {
     persistentStorage: fields.BooleanField;
 };
 
-type PackageAuthorSchema = {
+export type PackageAuthorSchema = {
     /** The author name */
     name: fields.StringField<string, string, true, false, false>;
     /** The author email address */
@@ -274,7 +274,7 @@ type PackageAuthorSchema = {
 };
 export type PackageAuthorData = ModelPropsFromSchema<PackageAuthorSchema>;
 
-type PackageCompendiumSchema = {
+export type PackageCompendiumSchema = {
     /** The canonical compendium name. This should contain no spaces or special characters */
     name: fields.StringField<string, string, true, false, false>;
     /** The human-readable compendium name */
@@ -291,7 +291,7 @@ type PackageCompendiumSchema = {
 };
 export type PackageCompendiumData = ModelPropsFromSchema<PackageCompendiumSchema>;
 
-type PackageLanguageSchema = {
+export type PackageLanguageSchema = {
     /** A string language code which is validated by Intl.getCanonicalLocales */
     lang: fields.StringField<string, string, true, false, false>;
     /** The human-readable language name */

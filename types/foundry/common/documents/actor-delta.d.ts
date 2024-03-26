@@ -60,7 +60,7 @@ export default interface BaseActorDelta<TParent extends documents.BaseToken | nu
     extends abstract.Document<TParent, ActorDeltaSchema>,
         ModelPropsFromSchema<ActorDeltaSchema> {}
 
-interface ActorDeltaMetadata extends abstract.DocumentMetadata {
+export interface ActorDeltaMetadata extends abstract.DocumentMetadata {
     name: "ActorDelta";
     collection: "delta";
     label: "DOCUMENT.ActorDelta";
@@ -72,7 +72,7 @@ interface ActorDeltaMetadata extends abstract.DocumentMetadata {
     };
 }
 
-type ActorDeltaSchema = {
+export type ActorDeltaSchema = {
     _id: fields.DocumentIdField;
     name: fields.StringField<string, string, false, true, true>;
     type: fields.StringField<string, string, false, true, true>;

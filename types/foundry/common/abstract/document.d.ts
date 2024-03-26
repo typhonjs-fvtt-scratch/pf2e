@@ -585,7 +585,7 @@ export default abstract class Document<
     toJSON(): RawObject<this>;
 }
 
-type MetadataPermission =
+export type MetadataPermission =
     | keyof typeof CONST.USER_ROLES
     | keyof typeof CONST.USER_PERMISSIONS
     | ((...args: unknown[]) => boolean);

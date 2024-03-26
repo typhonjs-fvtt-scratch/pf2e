@@ -20,7 +20,7 @@ export default interface BaseJournalEntryPage<TParent extends BaseJournalEntry |
     get documentName(): (typeof BaseJournalEntryPage)["metadata"]["name"];
 }
 
-interface JournalEntryPageMetadata extends abstract.DocumentMetadata {
+export interface JournalEntryPageMetadata extends abstract.DocumentMetadata {
     name: "JournalEntryPage";
     collection: "pages";
     indexed: true;
@@ -29,7 +29,7 @@ interface JournalEntryPageMetadata extends abstract.DocumentMetadata {
     coreTypes: ["image", "pdf", "text", "video"];
 }
 
-type JournalEntryPageSchema<
+export type JournalEntryPageSchema<
     TType extends string = string,
     TSystemSource extends object = object,
     TSystemData extends object = TSystemSource,

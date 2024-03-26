@@ -15,7 +15,7 @@ export default interface BaseCombat extends Document<null, CombatSchema>, ModelP
     get documentName(): CombatMetadata["name"];
 }
 
-interface CombatMetadata extends DocumentMetadata {
+export interface CombatMetadata extends DocumentMetadata {
     name: "Combat";
     collection: "combats";
     label: "DOCUMENT.Combat";
@@ -25,7 +25,7 @@ interface CombatMetadata extends DocumentMetadata {
     isPrimary: true;
 }
 
-type CombatSchema = {
+export type CombatSchema = {
     /** The _id which uniquely identifies this Combat document */
     _id: fields.DocumentIdField;
     /** The _id of a Scene within which this Combat occurs */
@@ -45,4 +45,4 @@ type CombatSchema = {
     _stats: fields.DocumentStatsField;
 };
 
-type CombatSource = SourceFromSchema<CombatSchema>;
+export type CombatSource = SourceFromSchema<CombatSchema>;

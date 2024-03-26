@@ -21,14 +21,14 @@ export default interface BaseAmbientLight<TParent extends documents.BaseScene | 
     light: data.LightData<this>;
 }
 
-interface AmbientLightMetadata extends DocumentMetadata {
+export interface AmbientLightMetadata extends DocumentMetadata {
     name: "AmbientLight";
     collection: "lights";
     label: "DOCUMENT.AmbientLight";
     isEmbedded: true;
 }
 
-type AmbientLightSchema = {
+export type AmbientLightSchema = {
     /** The _id which uniquely identifies this BaseAmbientLight embedded document */
     _id: fields.DocumentIdField;
     /** The x-coordinate position of the origin of the light */
